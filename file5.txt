@@ -1,0 +1,14 @@
+# Use official Python image as base
+FROM python:3.9-slim
+
+# Set working directory inside the container
+WORKDIR /app
+
+# Copy local files to the container
+COPY . /app
+
+# Expose port 8000 (HTTP server will run on this port)
+EXPOSE 8000
+
+# Run Python’s built-in web server
+CMD ["python", "-m", "http.server", "8000"]
